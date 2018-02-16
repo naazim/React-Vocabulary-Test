@@ -5,7 +5,7 @@ import Header from './Header';
 import Options from './Options';
 // import OptionModal from './OptionModal';
 
-export default class VocabularyApp extends React.Component {
+export default class CreateDirectory extends React.Component {
   state = {
     wordList: [],
     test: false,
@@ -76,11 +76,6 @@ export default class VocabularyApp extends React.Component {
 
     return (
       <div>
-        <Header />
-
-        {/* If not in test mode */}
-        {!this.state.test && 
-        
         <div className="container">
           <div className="widget">
             <Options
@@ -98,14 +93,6 @@ export default class VocabularyApp extends React.Component {
             percentage={this.state.wordList.length}
           />
         </div>
-        }
-
-        {/* if in test mode */}
-        {this.state.test &&
-        <div className="container">
-          <h1>Test</h1>
-        </div>
-      }
 
         {/* <OptionModal
           selectedOption={this.state.selectedOption}

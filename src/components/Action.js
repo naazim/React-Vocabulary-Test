@@ -1,16 +1,17 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Progress from './Progress';
 
 const Action = (props) => (
   <div>
     <Progress percentage={props.percentage} />
-    <button
+    <Link
+      to="/test"
       className="big-button"
-      onClick={props.handleTest}
       disabled={!props.hasOptions}
     >
       Take Test
-      </button>
+      </Link>
   </div>
 );
 

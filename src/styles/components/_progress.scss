@@ -7,6 +7,7 @@ $height: 5px;
     &__percent {
         background-color: $purple;
         height: $height;
+        max-width: 100%;
         width: 0;
         transition: width 1s ease-in-out;
     }
