@@ -1,0 +1,13 @@
+$height: 5px;
+
+.progress {
+    background-color: $off-white;
+    height: $height;
+
+    &__percent {
+        background-color: $purple;
+        height: $height;
+        width: 0;
+        transition: width 1s ease-in-out;
+    }
+}
