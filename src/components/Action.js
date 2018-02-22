@@ -6,9 +6,8 @@ const Action = (props) => (
   <div>
     <Progress percentage={props.percentage} />
     <Link
-      to="/test"
+      to={props.hasOptions ? '/test' : '/'}
       className="big-button"
-      disabled={!props.hasOptions}
     >
       Take Test
       </Link>
