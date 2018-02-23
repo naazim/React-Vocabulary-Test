@@ -1,0 +1,44 @@
+.question {
+    &:first-child {
+        display: block;
+    }
+    &__content {
+        background: $blue;
+        border-bottom: 1px solid lighten($light-blue, 10%);
+        color: $off-white;
+        font-size: 2rem;
+        margin: $l-size 0;
+        text-align: center;
+    }
+    &__title {
+        color: white;
+    }
+    &__text {
+        padding: $l-size;
+    }
+    &__input {
+        box-sizing: border-box;
+        padding: $l-size 0;
+        text-align: center;
+        width: 100%;
+    }
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__button {
+        background-color: $purple;
+        border: 6px solid lighten($purple, 10%);
+        border-radius: 100%;
+        color: #fff;
+        font-size: $l-size;
+        height: 90px;
+        outline: none;
+        width: 90px;
+
+        &-previous {
+            background-color: $light-blue;
+            border-color: lighten($light-blue, 10%);
+        }
+    }
+}

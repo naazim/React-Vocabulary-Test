@@ -43,7 +43,7 @@ export default class CreateDirectory extends React.Component {
     }
 
     this.setState((prevState) => ({
-      wordList: [...prevState.wordList, {'native':option, 'foreign':option2}]
+      wordList: [...prevState.wordList, {'native':option, 'foreign':option2, asked: false, status: undefined}]
     }));
 
     console.log('state set : ', this.state.wordList)
