@@ -6,7 +6,7 @@ const Action = (props) => (
   <div>
     <Progress percentage={props.percentage} />
     <Link
-      to={props.hasOptions ? '/test' : '/'}
+      to={props.hasOptions ? '/quiz' : '/'}
       className="big-button"
     >
       Take Test

@@ -1,7 +1,7 @@
 import React from 'react';
 import Question from './Question';
 
-export default class TestApp extends React.Component {
+export default class Quiz extends React.Component {
     state = {
         wordList: [],
         count: 0
