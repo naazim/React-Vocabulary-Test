@@ -5,12 +5,12 @@ import Progress from './Progress';
 const Action = (props) => (
   <div>
     <Progress percentage={props.percentage} />
-    <Link
-      to={props.hasOptions ? '/quiz' : '/'}
+    <button
+      onClick={props.handleTest}
       className="big-button"
     >
       Take Test
-      </Link>
+      </button>
   </div>
 );
 

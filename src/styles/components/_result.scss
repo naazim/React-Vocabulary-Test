@@ -1,0 +1,35 @@
+.result {
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        border-bottom: 1px solid lighten($light-blue, 10%);
+    }
+    &__header {
+        background-color: $off-black;
+        color: white;
+    }
+    &__word {
+        border-right: 1px solid lighten($light-blue, 10%);
+        flex: 1;
+        padding: $m-size  $s-size;
+    }
+    &__icon {
+        border-right: 1px solid lighten($light-blue, 10%);
+        padding: $m-size  $s-size;
+        text-align: center;
+        width: 2.5rem;
+
+        &--right {
+            color: $purple;
+        }
+
+        &--wrong {
+            color: red;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+}
