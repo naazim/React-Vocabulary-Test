@@ -1,59 +1,64 @@
 // Big Button
 .big-button {
-  background: $primary-color;
-  border: none;
-  border-bottom: .6rem solid darken($primary-color, 10%);
-  color: white;
-  display: block;
-  font-weight: bold;
-  font-size: $l-size;
-  margin-bottom: $m-size;
-  padding: 2.4rem;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color 0.5s ease; 
-  width: 100%;
-
-  &:focus, &:hover {
-    background-color: lighten($primary-color, 10%);
-  }
+    background: $primary-color;
+    border: none;
+    color: white;
+    display: block;
+    font-weight: bold;
+    font-size: $l-size;
+    margin-top: $m-size;
+    padding: 2.4rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.5s ease;
+    width: 100%;
+    &:focus,
+    &:hover {
+        background-color: lighten($primary-color, 10%);
+    }
+    &:disabled {
+        background-color: $primary-bg-color;
+        color: darken( $primary-bg-color, 10%);
+    }
 }
 
-.big-button:disabled {
-  opacity: .5;
-}
-
-@media (min-width: $desktop-breakpoint) {
-  .big-button {
-    margin-bottom: $xl-size;
-  }
-}
 
 // Button
 .button {
   background: $primary-color;
   border: none;
-  border-bottom: .3rem solid darken($primary-color, 10%);
   color: white;
   font-weight: 500;
   padding: $s-size;
-  transition: background-color 0.5s ease; 
+  transition: background-color 0.5s ease;
+  
+  &:focus,
+  &:hover {
+      background-color: lighten($primary-color, 10%);
+  }
 
-  &:focus, &:hover {
-    background-color: lighten($primary-color, 10%);
+  &--link {
+      background: none;
+      border: none;
+      color: $primary-color;
+      padding: 0;
+      
+      &:hover, &:focus {
+        text-decoration: underline;
+      }
+  }
+
+  &--icon {
+    background-color: $primary-color;
+    width: 5.4rem;
+  }
+
+  &--plus {
+      @extend .button--icon;
+      font-size: 2.8rem;
   }
 }
 
-.button--link {
-  background: none;
-  border: none;
-  color: $off-white;
-  padding: 0;
-}
+@media (min-width: $desktop-breakpoint) {
 
-.button--icon {
-  background-color: darken($primary-color, 5%);
-  border-bottom: none;
-  font-size: $m-size;
-  padding: $s-size 1.9rem;
 }

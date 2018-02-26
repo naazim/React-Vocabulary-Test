@@ -3,18 +3,19 @@ import React from 'react';
 const Question = (props) => {
     const handleNext = (e) => {
         e.preventDefault();
-        console.log('target',e.target);
+        console.log('target', e.target);
         const enteredWord = document.querySelector('.question__input').value.trim();
 
-        if(enteredWord !== '') {
+        if (enteredWord !== '') {
             props.handleNext(enteredWord);
             document.querySelector('.question__input').value = '';
         }
     }
     return (
-        <div className="question">
-            <h2 className="question__title">Question no: {props.count + 1}</h2>
-                <div className="question__content">
+        <div>
+            <div className="question__content">
+                <h2 className="question__title">{props.count + 1}</h2>
+                <div className="question__box">
                     <div className="question__text">{props.word.native}</div>
                     <input
                         className="question__input"
@@ -22,10 +23,11 @@ const Question = (props) => {
                         placeholder="Enter Foreign Word"
                     />
                 </div>
-                <div className="question__footer">
-                    <button className="question__button question__button-previous">🡸</button>
-                    <button className="question__button" onClick={handleNext}>🡺</button>
-                </div>
+            </div>
+            <div className="question__footer">
+                {props.count > 0 && <button className="question__button question__button-previous">🡸</button>}
+                <button className="question__button question__button-next" onClick={handleNext}>🡺</button>
+            </div>
         </div>
     )
 };

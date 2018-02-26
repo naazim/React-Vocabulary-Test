@@ -1,7 +1,7 @@
 import React from 'react';
 import Options from './Options';
 import AddOption from './AddOption';
-import Action from './Action';
+import Progress from './Progress';
 
 export default class CreateQuiz extends React.Component {
     constructor(props) {
@@ -71,14 +71,14 @@ export default class CreateQuiz extends React.Component {
         console.log('componentWillUnmount');
     }
 
-
-
     render() {
+        const {wordList} = this.state;
         return (
-            <div>
+            <div className="wrapper">
+                <Progress percentage={wordList.length} />
                 <div className="widget">
                     <Options
-                        options={this.state.wordList}
+                        options={wordList}
                         handleDeleteOptions={this.handleDeleteOptions}
                         handleDeleteOption={this.handleDeleteOption}
                     />
@@ -86,10 +86,12 @@ export default class CreateQuiz extends React.Component {
                         handleAddOption={this.handleAddOption}
                     />
                 </div>
-                <Action
-                    hasOptions={this.state.wordList.length >= 20}
-                    handleTest={this.handleTest}
-                    percentage={this.state.wordList.length}
+                <input
+                    type="button"
+                    onClick={this.handleTest}
+                    className="big-button"
+                    disabled={wordList.length < 2}
+                    value="Take Test"
                 />
             </div>
         );

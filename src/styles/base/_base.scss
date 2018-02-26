@@ -10,10 +10,16 @@ body {
   font-size: $m-size;
 }
 
-button {
+button, input[type=button] {
   cursor: pointer;
 }
 
-button:disabled {
+button:disabled, input[type=button]:disabled {
   cursor: default;
+}
+
+input {
+  font-family: 'Mukta Mahee', sans-serif;
+  background: $primary-bg-color;
+  border: .3rem solid $primary-color;
 }

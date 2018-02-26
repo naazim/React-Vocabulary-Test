@@ -1,8 +1,8 @@
-$height: 5px;
+$height: 16px;
 
 .progress {
-    background-color: $off-white;
-    height: $height;
+    background-color: $bg-color;
+    margin-bottom: $m-size;
 
     &__percent {
         background-color: $primary-color;

@@ -1,5 +1,6 @@
 import React from 'react';
 import Question from './Question';
+import Progress from './Progress';
 
 export default class Quiz extends React.Component {
     constructor(props) {
@@ -65,7 +66,9 @@ export default class Quiz extends React.Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="wrapper">
+                <Progress percentage={this.state.count} />
+                
                 <Question
                     word={this.state.wordList[this.state.count]}
                     handleNext={this.handleNext}
