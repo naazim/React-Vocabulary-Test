@@ -7,6 +7,7 @@ import Result from './Result';
 export default class VocabularyApp extends React.Component {
   state = {
     wordList: [],
+    shuffledList: [],
     module: 'CreateQuiz'  //CreateQuiz || PerformQuiz || QuizResult
   };
 
@@ -14,15 +15,12 @@ export default class VocabularyApp extends React.Component {
     try {
       const json = localStorage.getItem('wordList');
       const wordList = JSON.parse(json);
-      // let sortedList = this.shuffleArray(wordList);
-      // console.log('srted',sortedList)
 
       if (wordList) {
         this.setState(() => ({ wordList }));
-        // this.setState(() => ({ wordList: sortedList }));
       }
     } catch (e) {
-      // Do nothing at all
+      // Do nothing
     }
   };
 
@@ -35,7 +33,7 @@ export default class VocabularyApp extends React.Component {
 
   handleAddWord = (native, foreign) => {
     this.setState((prevState) => ({
-      wordList: [...prevState.wordList, { native, foreign, 'userAnswer': undefined }]
+      wordList: [...prevState.wordList, { native, foreign }]
     }));
   };
 
@@ -53,11 +51,34 @@ export default class VocabularyApp extends React.Component {
     this.setState(() => ({
       module
     }));
+
+    if(module === 'PerformQuiz') {
+      const shuffledList = this.shuffleList([...this.state.wordList]);
+      this.handleShuffledList(shuffledList);
+    }
+  };
+
+  handleShuffledList = (shuffledList) => {
+    this.setState(() => ({
+      shuffledList
+    }));
+  };
+
+  /**
+   * @description Shuffles the array
+   * @param {Array} list : contains the list of words
+   */
+  shuffleList = (list) => {
+    for (let i = list.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [list[i], list[j]] = [list[j], list[i]];
+    }
+    return list;
   };
 
   render() {
-    const { module, wordList } = this.state;
-    console.log(wordList)
+    const { module, wordList, shuffledList } = this.state;
+
     return (
       <div>
         <Header />
@@ -65,19 +86,27 @@ export default class VocabularyApp extends React.Component {
 
           {module === 'CreateQuiz' &&
             <CreateQuiz
-              handleModule={this.handleModule}
               handleAddWord={this.handleAddWord}
               handleDeleteWord={this.handleDeleteWord}
               handleDeleteAll={this.handleDeleteAll}
+              handleModule={this.handleModule}
               wordList={wordList}
             />
           }
 
-          {module === 'PerformQuiz' && <Quiz handleModule={this.handleModule} />}
+          {module === 'PerformQuiz' &&
+            <Quiz
+              handleModule={this.handleModule}
+              shuffledList={shuffledList}
+              handleShuffledList={this.handleShuffledList}
+              // shuffledList={this.shuffledList(wordList)}
+            />
+          }
+
           {module === 'QuizResult' &&
             <Result
               handleModule={this.handleModule}
-              wordList={wordList}
+              shuffledList={shuffledList}
             />
           }
         </div>

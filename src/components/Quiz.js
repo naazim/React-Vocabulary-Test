@@ -8,57 +8,32 @@ export default class Quiz extends React.Component {
     };
 
     state = {
-        wordList: [],
+        shuffledList: [],
         count: 0
     };
 
-    // shuffleArray = (o) => {
-    //     for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-    //         return o;
-    // };
-
     componentWillMount() {
-        try {
-            const json = localStorage.getItem('wordList');
-            const wordList = JSON.parse(json);
-            // let sortedList = this.shuffleArray(wordList);
-            // console.log('srted',sortedList)
-
-            if (wordList) {
-                this.setState(() => ({ wordList }));
-                // this.setState(() => ({ wordList: sortedList }));
-            }
-        } catch (e) {
-            // Do nothing at all
-        }
+        this.setState(() => ({
+            shuffledList: this.props.shuffledList
+        }));
     };
-
-    componentDidUpdate(prevProps, prevState) {
-        if (prevState.wordList.length !== this.state.wordList.length) {
-            const json = JSON.stringify(this.state.wordList);
-            localStorage.setItem('wordList', json);
-        };
-    };
-
+    
     handleNext = (userAnswer) => {
-        const wordList = this.state.wordList;
+        const shuffledList = this.props.shuffledList;
         const updatedWordSet = {
-            ...wordList[this.state.count],
+            ...shuffledList[this.state.count],
             userAnswer
         };
 
-        wordList[this.state.count] = updatedWordSet;
+        shuffledList[this.state.count] = updatedWordSet;
 
         this.setState((prevState) => ({
-            wordList,
-            count: this.state.count + 1 >= this.state.wordList.length ? this.state.count : this.state.count + 1
+            shuffledList,
+            count: this.state.count + 1 >= this.state.shuffledList.length ? this.state.count : this.state.count + 1
         }));
 
-
-        if (this.state.count + 1 >= this.state.wordList.length) {
-            const json = JSON.stringify(this.state.wordList);
-            localStorage.setItem('wordList', json);
-
+        if (this.state.count + 1 >= this.state.shuffledList.length) {
+            this.props.handleShuffledList(this.state.shuffledList);
             this.props.handleModule('QuizResult');
         }
     };
@@ -69,7 +44,7 @@ export default class Quiz extends React.Component {
                 <Progress percentage={this.state.count} />
 
                 <Question
-                    word={this.state.wordList[this.state.count]}
+                    word={this.state.shuffledList[this.state.count]}
                     handleNext={this.handleNext}
                     count={this.state.count} />
             </div>

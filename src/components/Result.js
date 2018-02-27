@@ -2,7 +2,7 @@ import React from 'react';
 import ResultItem from './ResultItem';
 
 const Result = (props) => {
-    const filtered = props.wordList.filter((word) => word.foreign === word.userAnswer);
+    const filtered = props.shuffledList.filter((word) => word.foreign === word.userAnswer);
     const score = filtered.length / 20 * 100;
 
     const handleSubmit = () => {
@@ -16,7 +16,7 @@ const Result = (props) => {
                 <div className="result__score">{score}%</div>
             </div>
 
-            {props.wordList.map((word, index) => (
+            {props.shuffledList.map((word, index) => (
                 <ResultItem key={index} word={word} index={index} />
             ))}
 
