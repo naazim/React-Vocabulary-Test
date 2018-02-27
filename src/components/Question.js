@@ -3,16 +3,16 @@ import React from 'react';
 const Question = (props) => {
     const handleNext = (e) => {
         e.preventDefault();
-        console.log('target', e.target);
-        const enteredWord = document.querySelector('.question__input').value.trim();
+        const enteredWord = document.querySelector('.question__input').value;
 
-        if (enteredWord !== '') {
+        if (enteredWord.trim() !== '') {
             props.handleNext(enteredWord);
             document.querySelector('.question__input').value = '';
         }
     }
+
     return (
-        <div>
+        <form onSubmit={handleNext}>
             <div className="question__content">
                 <h2 className="question__title">{props.count + 1}</h2>
                 <div className="question__box">
@@ -21,14 +21,15 @@ const Question = (props) => {
                         className="question__input"
                         type="text"
                         placeholder="Enter Foreign Word"
+                        required
+                        autoFocus
                     />
                 </div>
             </div>
             <div className="question__footer">
-                {props.count > 0 && <button className="question__button question__button-previous">🡸</button>}
-                <button className="question__button question__button-next" onClick={handleNext}>🡺</button>
+                <button type="submit" className="question__button question__button-next">🡺</button>
             </div>
-        </div>
+        </form>
     )
 };
 
