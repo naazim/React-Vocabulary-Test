@@ -13,6 +13,9 @@
         font-style: italic;
         margin: $m-size 0 0 0;
     }
+    &__mobile {
+        font-size: 2.5rem;
+    }
 }
 
 @media (min-width: $desktop-breakpoint) {
@@ -21,6 +24,9 @@
 
         &__input {
             margin: 0 $s-size 0 0;
+        }
+        &__mobile {
+            display: none;
         }
     }
 }

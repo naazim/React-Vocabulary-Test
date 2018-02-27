@@ -10,11 +10,11 @@
         background-color: $primary-bg-color;
         color: lighten($primary-color, 20%);
         display: flex;
-        font-size: 15rem;
+        font-size: 9rem;
         justify-content: center;
         margin: 0;
         text-align: center;
-        width: 18rem;
+        width: 14rem;
     }
     &__text {
         background-color: $primary-color;
@@ -31,7 +31,7 @@
     }
     &__box {
         flex: 1;
-        font-size: 3rem;
+        font-size: 2rem;
         text-align: left;
     }
     &__footer {
@@ -52,6 +52,18 @@
         }
         &-next {
             margin-left: auto;
+        }
+    }
+}
+
+@media (min-width: $desktop-breakpoint) {
+    .question {
+        &__title {
+            font-size: 15rem;
+            width: 18rem;
+        }
+        &__box {
+            font-size: 3rem;
         }
     }
 }

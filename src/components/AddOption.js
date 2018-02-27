@@ -27,7 +27,7 @@ export default class AddOption extends React.Component {
         <form className="add-option" onSubmit={this.handleAddOption}>
           <input className="add-option__input" type="text" name="option" placeholder="Enter native word" autoFocus />
           <input className="add-option__input" type="text" name="option2" placeholder="Enter foreign word" />
-          <button className="button button--plus">+</button>
+          <button className="button button--plus"><span className="add-option__mobile">Add word </span>+</button>
         </form>
       </div>
     );

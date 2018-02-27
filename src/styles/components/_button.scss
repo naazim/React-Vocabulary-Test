@@ -56,9 +56,12 @@
   &--plus {
       @extend .button--icon;
       font-size: 2.8rem;
+      width: auto;
   }
 }
 
 @media (min-width: $desktop-breakpoint) {
-
+    .button--plus {
+        width: 5.4rem;
+    }
 }

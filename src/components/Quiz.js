@@ -37,25 +37,24 @@ export default class Quiz extends React.Component {
         if (prevState.wordList.length !== this.state.wordList.length) {
             const json = JSON.stringify(this.state.wordList);
             localStorage.setItem('wordList', json);
-        }
-        
+        };
     };
 
     handleNext = (userAnswer) => {
-            const wordList = this.state.wordList;
-            const updatedWordSet = {
-                ...wordList[this.state.count],
-                userAnswer
-            };
+        const wordList = this.state.wordList;
+        const updatedWordSet = {
+            ...wordList[this.state.count],
+            userAnswer
+        };
 
-            wordList[this.state.count] = updatedWordSet;
+        wordList[this.state.count] = updatedWordSet;
 
-            this.setState((prevState) => ({
-                wordList,
-                count: this.state.count + 1 >= this.state.wordList.length ? this.state.count : this.state.count + 1
-            }));
+        this.setState((prevState) => ({
+            wordList,
+            count: this.state.count + 1 >= this.state.wordList.length ? this.state.count : this.state.count + 1
+        }));
 
-            
+
         if (this.state.count + 1 >= this.state.wordList.length) {
             const json = JSON.stringify(this.state.wordList);
             localStorage.setItem('wordList', json);
@@ -68,7 +67,7 @@ export default class Quiz extends React.Component {
         return (
             <div className="wrapper">
                 <Progress percentage={this.state.count} />
-                
+
                 <Question
                     word={this.state.wordList[this.state.count]}
                     handleNext={this.handleNext}

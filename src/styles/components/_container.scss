@@ -1,5 +1,18 @@
 .container {
-  max-width: 60rem;
-  margin: 0 auto;
-  padding: 0 $m-size;
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.wrapper {
+    background-color: white;
+    padding: $m-size;
+}
+
+@media (min-width: $desktop-breakpoint) {
+    .container {
+        padding: 0 $m-size;
+    }
+    .wrapper {
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    }
 }

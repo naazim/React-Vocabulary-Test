@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  background: $bg-color;
+  background: white;
   font-family: 'Mukta Mahee', sans-serif;
   font-size: $m-size;
 }
@@ -22,4 +22,10 @@ input {
   font-family: 'Mukta Mahee', sans-serif;
   background: $primary-bg-color;
   border: .3rem solid $primary-color;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  body {
+    background: $bg-color;
+  }
 }
