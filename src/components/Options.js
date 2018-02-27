@@ -7,7 +7,7 @@ const Options = (props) => (
       <h3 className="widget__title">Your word list</h3>
       <button
         className="button--link"
-        onClick={props.handleDeleteOptions}
+        onClick={props.handleDeleteAll}
       >
         Remove All
     </button>
@@ -22,7 +22,7 @@ const Options = (props) => (
             optionText={option.native}
             optionText2={option.foreign}
             count={index + 1}
-            handleDeleteOption={props.handleDeleteOption}
+            handleDeleteWord={props.handleDeleteWord}
           />
         )
       })

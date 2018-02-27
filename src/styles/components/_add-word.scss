@@ -1,4 +1,4 @@
-.add-option {
+.add-word {
     display: flex;
     flex-direction: column;
     padding-top: $m-size;
@@ -19,7 +19,7 @@
 }
 
 @media (min-width: $desktop-breakpoint) {
-    .add-option {
+    .add-word {
         flex-direction: row;
 
         &__input {

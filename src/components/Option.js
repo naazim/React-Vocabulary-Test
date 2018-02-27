@@ -7,7 +7,7 @@ const Option = (props) => (
     <button
       className="button button--icon"
       onClick={(e) => {
-        props.handleDeleteOption(props.count - 1);
+        props.handleDeleteWord(props.count - 1);
       }}
     >
       ✖

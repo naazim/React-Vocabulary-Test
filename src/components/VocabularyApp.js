@@ -26,6 +26,29 @@ export default class VocabularyApp extends React.Component {
     }
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.wordList.length !== this.state.wordList.length) {
+      const json = JSON.stringify(this.state.wordList);
+      localStorage.setItem('wordList', json);
+    };
+  };
+
+  handleAddWord = (native, foreign) => {
+    this.setState((prevState) => ({
+      wordList: [...prevState.wordList, { native, foreign, 'userAnswer': undefined }]
+    }));
+  };
+
+  handleDeleteWord = (wordToRemove) => {
+    this.setState((prevState) => ({
+      wordList: prevState.wordList.filter((word) => wordToRemove !== prevState.wordList.indexOf(word))
+    }));
+  };
+
+  handleDeleteAll = () => {
+    this.setState(() => ({ wordList: [] }));
+  };
+
   handleModule = (module) => {
     this.setState(() => ({
       module
@@ -34,11 +57,22 @@ export default class VocabularyApp extends React.Component {
 
   render() {
     const { module, wordList } = this.state;
+    console.log(wordList)
     return (
       <div>
         <Header />
         <div className="container">
-          {module === 'CreateQuiz' && <CreateQuiz handleModule={this.handleModule} />}
+
+          {module === 'CreateQuiz' &&
+            <CreateQuiz
+              handleModule={this.handleModule}
+              handleAddWord={this.handleAddWord}
+              handleDeleteWord={this.handleDeleteWord}
+              handleDeleteAll={this.handleDeleteAll}
+              wordList={wordList}
+            />
+          }
+
           {module === 'PerformQuiz' && <Quiz handleModule={this.handleModule} />}
           {module === 'QuizResult' &&
             <Result
