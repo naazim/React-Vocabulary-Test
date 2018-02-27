@@ -2,15 +2,15 @@
   border-bottom: 1px solid $border-color;
   display: flex;
   justify-content: space-between;
-}
 
-.option__text {
-  border-left: 1px solid $border-color;
-  color: $off-black;
-  font-weight: 500;
-  font-size: 2rem;
-  margin: 0;
-  padding: $m-size;
-  word-break: break-all;
-  flex: 1;
+  &__text {
+    border-left: 1px solid $border-color;
+    color: $off-black;
+    font-weight: 500;
+    font-size: 2rem;
+    margin: 0;
+    padding: $m-size;
+    word-break: break-all;
+    flex: 1;
+  }
 }

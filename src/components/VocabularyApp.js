@@ -33,13 +33,19 @@ export default class VocabularyApp extends React.Component {
   };
 
   render() {
+    const { module, wordList } = this.state;
     return (
       <div>
         <Header />
         <div className="container">
-          {this.state.module === 'CreateQuiz' && <CreateQuiz handleModule={this.handleModule} />}
-          {this.state.module === 'PerformQuiz' && <Quiz handleModule={this.handleModule} />}
-          {this.state.module === 'QuizResult' && <Result handleModule={this.handleModule} wordList={this.state.wordList} />}
+          {module === 'CreateQuiz' && <CreateQuiz handleModule={this.handleModule} />}
+          {module === 'PerformQuiz' && <Quiz handleModule={this.handleModule} />}
+          {module === 'QuizResult' &&
+            <Result
+              handleModule={this.handleModule}
+              wordList={wordList}
+            />
+          }
         </div>
       </div>
     );

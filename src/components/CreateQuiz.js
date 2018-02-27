@@ -89,7 +89,7 @@ export default class CreateQuiz extends React.Component {
                 <input
                     type="button"
                     onClick={this.handleTest}
-                    className="big-button"
+                    className="button button--big"
                     disabled={wordList.length < 2}
                     value="Take Test"
                 />

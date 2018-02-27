@@ -1,25 +1,22 @@
-// Widget
 .widget {
   background: white;
-}
 
-.widget__message {
-  border-bottom: 1px solid lighten($light-blue, 10%);
-  color: $primary-color;
-  margin: 0;
-  padding: $l-size;
-  text-align: center;
-}
+  &__message {
+    color: $primary-color;
+    margin: 0;
+    padding: $l-size;
+    text-align: center;
+  }
 
-// Widget Header
-.widget-header {
-  background: $primary-bg-color;
-  color: $primary-color;
-  display: flex;
-  justify-content: space-between;
-  padding: $m-size;
-}
+  &__header {
+    background: $primary-bg-color;
+    color: $primary-color;
+    display: flex;
+    justify-content: space-between;
+    padding: $m-size;
+  }
 
-.widget-header__title {
-  margin: 0;
+  &__title {
+    margin: 0;
+  }
 }
