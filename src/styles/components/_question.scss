@@ -46,10 +46,6 @@
         height: 90px;
         outline: none;
         width: 90px;
-        &-previous {
-            background-color: $secondary-bg-color;
-            border-color: lighten($light-blue, 10%);
-        }
         &-next {
             margin-left: auto;
         }
