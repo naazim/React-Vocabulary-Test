@@ -35,7 +35,7 @@ const CreateQuiz = (props) => {
                 type="button"
                 onClick={() => props.handleModule('PerformQuiz')}
                 className="button button--big"
-                disabled={wordList.length < 2}
+                disabled={wordList.length < 20}
                 value="Take Test"
             />
         </div>

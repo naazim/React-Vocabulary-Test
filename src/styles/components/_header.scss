@@ -1,21 +1,22 @@
 .header {
-  background: $primary-color;
-  color: white;
-  padding: $m-size 0;
-
-  &__title {
-    font-size: $l-size;
-    margin: 0;
-    padding: 0 $m-size;
-  }
+    background: $primary-color;
+    color: white;
+    padding: $m-size 0;
+    &__title {
+        font-size: $l-size;
+        margin: 0;
+        padding: 0 $m-size;
+    }
 }
 
 @media (min-width: $desktop-breakpoint) {
-  .header {
-    margin-bottom: $xl-size;
-
-    &__title {
-      padding: 0;
+    .header {
+        margin-bottom: $xl-size;
+        +.container {
+            margin-bottom: $xl-size;
+        }
+        &__title {
+            padding: 0;
+        }
     }
-  }
 }
