@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Question should render Question correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    className="question__content"
+  >
+    <h2
+      className="question__title"
+    >
+      NaN
+    </h2>
+    <div
+      className="question__box"
+    >
+      <div
+        className="question__text"
+      >
+        Good
+      </div>
+      <input
+        autoFocus={true}
+        className="question__input"
+        placeholder="Enter Foreign Word"
+        required={true}
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    className="question__footer"
+  >
+    <button
+      className="question__button question__button-next"
+      type="submit"
+    >
+      🡺
+    </button>
+  </div>
+</form>
+`;

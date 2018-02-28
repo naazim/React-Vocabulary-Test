@@ -18,12 +18,3 @@ test('should handle error for invalid form submission', () => {
     expect(handleAddWord).toHaveBeenCalled();
     expect(wrapper).toMatchSnapshot();
 });
-
-test('should show error message for invalid form submission', () => {
-    const handleAddWord = jest.fn();
-    const wrapper = shallow(<AddWord handleAddWord ={handleAddWord} />);
-    wrapper.setState({ error: 'Enter valid native word'});
-    
-    const errorMsg = wrapper.find('.add-word-error').text();
-    expect(errorMsg).toEqual('Enter valid native word');
-});

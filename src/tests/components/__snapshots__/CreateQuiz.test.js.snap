@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create Quiz should create the quiz correctly 1`] = `
+<div
+  className="wrapper"
+>
+  <Progress
+    percentage={10}
+  />
+  <div
+    className="widget"
+  >
+    <Options
+      options={
+        Array [
+          Object {
+            "foreign": "Hallo",
+            "native": "Hello",
+          },
+          Object {
+            "foreign": "Gut",
+            "native": "Good",
+          },
+        ]
+      }
+    />
+    <AddWord
+      handleAddWord={[Function]}
+    />
+  </div>
+  <input
+    className="button button--big"
+    disabled={true}
+    onClick={[Function]}
+    type="button"
+    value="Take Test"
+  />
+</div>
+`;

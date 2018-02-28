@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Options should render options correctly 1`] = `
+<div>
+  <div
+    className="widget__header"
+  >
+    <h3
+      className="widget__title"
+    >
+      Your word list
+    </h3>
+    <button
+      className="button--link"
+      onClick={[Function]}
+    >
+      Remove All
+    </button>
+  </div>
+  <Option
+    count={1}
+    foreignWord="Hallo"
+    key="0"
+    nativeWord="Hello"
+  />
+  <Option
+    count={2}
+    foreignWord="Gut"
+    key="1"
+    nativeWord="Good"
+  />
+</div>
+`;
+
+exports[`Options should show message to add words when list is empty 1`] = `
+<div>
+  <div
+    className="widget__header"
+  >
+    <h3
+      className="widget__title"
+    >
+      Your word list
+    </h3>
+    <button
+      className="button--link"
+      onClick={[Function]}
+    >
+      Remove All
+    </button>
+  </div>
+  <p
+    className="widget__message"
+  >
+    Enter 20 words with translations get started
+  </p>
+</div>
+`;

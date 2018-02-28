@@ -34,9 +34,11 @@ const CreateQuiz = (props) => {
                     handleDeleteAll={props.handleDeleteAll}
                     handleDeleteWord={props.handleDeleteWord}
                 />
-                <AddWord
-                    handleAddWord={handleAddWord}
-                />
+                {wordList.length < 20 && 
+                    <AddWord
+                        handleAddWord={handleAddWord}
+                    />
+                }
             </div>
             <input
                 type="button"

@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Result should render Result correctly 1`] = `
+<div
+  className="wrapper"
+>
+  <div
+    className="result__header"
+  >
+    <h1
+      className="result__title"
+    >
+      Your score
+    </h1>
+    <div
+      className="result__score"
+    >
+      0
+      %
+    </div>
+  </div>
+  <ResultItem
+    index={0}
+    key="0"
+    word={
+      Object {
+        "foreign": "Hallo",
+        "native": "Hello",
+      }
+    }
+  />
+  <ResultItem
+    index={1}
+    key="1"
+    word={
+      Object {
+        "foreign": "Gut",
+        "native": "Good",
+      }
+    }
+  />
+  <button
+    className="question__button question__button-next"
+    onClick={[Function]}
+  >
+    🡸
+  </button>
+</div>
+`;

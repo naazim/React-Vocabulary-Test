@@ -13,7 +13,7 @@ const Options = (props) => (
     </button>
     </div>
 
-    {props.options.length === 0 && <p className="widget__message">Please create Vocabulary list to get started!</p>}
+    {props.options.length === 0 && <p className="widget__message">Enter 20 words with translations get started</p>}
     {
       props.options.map((option, index) => {
         return (

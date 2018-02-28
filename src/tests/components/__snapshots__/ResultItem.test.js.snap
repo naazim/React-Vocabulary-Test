@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultItem should render ResultItem correctly 1`] = `
+<div
+  className="result__item"
+>
+  <div
+    className="result__count"
+  >
+    NaN
+  </div>
+  <div
+    className="result__default"
+  >
+    <div
+      className="result__word"
+    >
+      Hello
+    </div>
+    <div
+      className="result__word"
+    >
+      Hallo
+    </div>
+  </div>
+  <div
+    className="result__answer result__error"
+  >
+    <span
+      className="result__label"
+    >
+      Your answer:
+    </span>
+    Hal
+  </div>
+</div>
+`;
