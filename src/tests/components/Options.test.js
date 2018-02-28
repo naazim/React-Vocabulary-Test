@@ -25,7 +25,7 @@ describe('Options', () => {
         options= [];
         wrapper = shallow(<Options options={options} handleDeleteAll={handleDeleteAll} />);
         expect(wrapper.find('.widget__message').length).toBe(1);
-        expect(wrapper.find('.widget__message').text()).toBe('Enter 20 words with translations get started');
+        expect(wrapper.find('.widget__message').text()).toBe('Enter 20 words with translations to get started');
         expect(wrapper).toMatchSnapshot();
     });
 

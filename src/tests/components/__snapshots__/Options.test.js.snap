@@ -42,17 +42,11 @@ exports[`Options should show message to add words when list is empty 1`] = `
     >
       Your word list
     </h3>
-    <button
-      className="button--link"
-      onClick={[Function]}
-    >
-      Remove All
-    </button>
   </div>
   <p
     className="widget__message"
   >
-    Enter 20 words with translations get started
+    Enter 20 words with translations to get started
   </p>
 </div>
 `;

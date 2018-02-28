@@ -27,7 +27,9 @@ const CreateQuiz = (props) => {
 
     return (
         <div className="wrapper">
-            <Progress percentage={percentage} />
+            {wordList.length > 0 && 
+                <Progress percentage={percentage} />
+            }
             <div className="widget">
                 <Options
                     options={wordList}

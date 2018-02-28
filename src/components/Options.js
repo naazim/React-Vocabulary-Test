@@ -5,15 +5,17 @@ const Options = (props) => (
   <div>
     <div className="widget__header">
       <h3 className="widget__title">Your word list</h3>
-      <button
-        className="button--link"
-        onClick={props.handleDeleteAll}
-      >
-        Remove All
-    </button>
+      {props.options.length > 0 && 
+        <button
+          className="button--link"
+          onClick={props.handleDeleteAll}
+        >
+          Remove All
+        </button>
+      }
     </div>
 
-    {props.options.length === 0 && <p className="widget__message">Enter 20 words with translations get started</p>}
+    {props.options.length === 0 && <p className="widget__message">Enter 20 words with translations to get started</p>}
     {
       props.options.map((option, index) => {
         return (
