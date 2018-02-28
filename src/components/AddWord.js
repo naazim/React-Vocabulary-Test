@@ -1,11 +1,14 @@
 import React from 'react';
 
 export default class AddWord extends React.Component {
-
   state = {
     error: undefined
   };
 
+  /**
+   * @description Handle the error & resetting words on adding the word pair
+   * @param {event} e
+   */
   handleAddWord = (e) => {
     e.preventDefault();
     const native = e.target.elements.native.value.trim();

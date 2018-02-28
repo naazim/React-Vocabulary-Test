@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should show the option panel with words recieved 1`] = `
+<div
+  className="option"
+>
+  <span
+    className="option__text"
+  >
+    morning
+  </span>
+  <span
+    className="option__text"
+  >
+    morgan
+  </span>
+  <button
+    className="button button--icon"
+    onClick={[Function]}
+  >
+    ✖
+  </button>
+</div>
+`;

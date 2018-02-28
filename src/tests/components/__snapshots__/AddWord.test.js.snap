@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should handle error for invalid form submission 1`] = `
+<div>
+  <form
+    className="add-word"
+    onSubmit={[Function]}
+  >
+    <input
+      autoFocus={true}
+      className="add-word__input"
+      name="native"
+      placeholder="Enter native word"
+      type="text"
+    />
+    <input
+      className="add-word__input"
+      name="foreign"
+      placeholder="Enter foreign word"
+      type="text"
+    />
+    <button
+      className="button button--plus"
+    >
+      <span
+        className="add-word__mobile"
+      >
+        Add word 
+      </span>
+      +
+    </button>
+  </form>
+</div>
+`;

@@ -5,11 +5,17 @@ import Progress from './Progress';
 
 const CreateQuiz = (props) => {
 
+    /**
+     * @description Handles the new word pair added and supplies the error messages
+     */
     const handleAddWord = (native, foreign) => {
-        if (!native) {
+        if (!native && !foreign) {
+            return 'Enter valid words';
+        }
+        else if (!native) {
             return 'Enter valid native word';
         }
-        if (!foreign) {
+        else if (!foreign) {
             return 'Enter valid foriegn word';
         }
 
@@ -17,10 +23,11 @@ const CreateQuiz = (props) => {
     };
 
     const { wordList } = props;
+    const percentage = wordList.length /20 * 100;
 
     return (
         <div className="wrapper">
-            <Progress percentage={wordList.length} />
+            <Progress percentage={percentage} />
             <div className="widget">
                 <Options
                     options={wordList}

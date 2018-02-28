@@ -5,6 +5,9 @@ const Result = (props) => {
     const filtered = props.shuffledList.filter((word) => word.foreign === word.userAnswer);
     const score = filtered.length / 20 * 100;
 
+    /**
+     * @description Returns the user to the Create Quiz list page
+     */
     const handleSubmit = () => {
         props.handleModule('CreateQuiz');
     };

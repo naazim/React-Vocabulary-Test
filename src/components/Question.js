@@ -1,6 +1,12 @@
 import React from 'react';
 
 const Question = (props) => {
+
+    /**
+     * @description handle the next button click of the quiz and 
+     * shows the next question when no validation errors
+     * @param {event} e
+     */
     const handleNext = (e) => {
         e.preventDefault();
         const enteredWord = document.querySelector('.question__input').value;

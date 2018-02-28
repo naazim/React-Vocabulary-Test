@@ -19,8 +19,8 @@ const Options = (props) => (
         return (
           <Option
             key={index}
-            optionText={option.native}
-            optionText2={option.foreign}
+            nativeWord={option.native}
+            foreignWord={option.foreign}
             count={index + 1}
             handleDeleteWord={props.handleDeleteWord}
           />

@@ -18,6 +18,11 @@ export default class Quiz extends React.Component {
         }));
     };
     
+    /**
+     * @description Updates the shuffled array with user's answer. If its the last question, 
+     * then shows the result component
+     * @param {string} userAnswer Translation answer entered by user
+     */
     handleNext = (userAnswer) => {
         const shuffledList = this.props.shuffledList;
         const updatedWordSet = {
@@ -39,9 +44,10 @@ export default class Quiz extends React.Component {
     };
 
     render() {
+        const percentage = this.state.count / 20 * 100;
         return (
             <div className="wrapper">
-                <Progress percentage={this.state.count} />
+                <Progress percentage={percentage} />
 
                 <Question
                     word={this.state.shuffledList[this.state.count]}
