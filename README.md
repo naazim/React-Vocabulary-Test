@@ -8,3 +8,7 @@ yarn run build:prod
 yarn run serve
 ```
 
+## Usage
+1. Create the word list
+2. Perform the test
+3. Review the results
